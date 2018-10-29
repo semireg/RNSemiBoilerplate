@@ -2,15 +2,11 @@
 // @format
 
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import {
   Platform, StyleSheet, Text, View, Image, Button,
 } from 'react-native';
 
 import { colors } from '../config/styles';
-import * as FooActions from '../actions/foo';
-import type { AppState } from '../config/types';
 
 const instructions = Platform.select({
   ios: 'ios',
@@ -48,19 +44,7 @@ Welcome to React!
   }
 }
 
-const mapStateToProps = (state: AppState) => ({
-  count: state.foo.count,
-});
-
-function mapDispatchToProps(dispatch: any) {
-  console.log(`FooActions: ${JSON.stringify(FooActions)}`);
-  return bindActionCreators(FooActions, dispatch); // eslint-disable-line flowtype/no-weak-types
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Home);
+export default Home;
 
 const styles = StyleSheet.create({
   container: {
