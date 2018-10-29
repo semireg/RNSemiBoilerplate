@@ -1,4 +1,5 @@
 // @flow
+// @format
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -9,7 +10,7 @@ import {
 
 import { colors } from '../config/styles';
 import * as FooActions from '../actions/foo';
-// import { type AppState } from '../config/types';
+import type { AppState } from '../config/types';
 
 const instructions = Platform.select({
   ios: 'ios',
@@ -47,7 +48,7 @@ Welcome to React!
   }
 }
 
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: AppState) => ({
   count: state.foo.count,
 });
 
