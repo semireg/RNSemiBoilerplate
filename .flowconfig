@@ -19,6 +19,13 @@
 ; Ignore metro
 .*/node_modules/metro/.*
 
+[untyped]
+.*/node_modules/react-native/Libraries/Components/Navigation/NavigatorIOS.ios.js
+.*/node_modules/react-native/Libraries/Components/TextInput/InputAccessoryView.js
+.*/node_modules/react-native/Libraries/Components/View/ViewPropTypes.js
+.*/node_modules/react-native/Libraries/Components/SafeAreaView/SafeAreaView.ios.js
+.*/node_modules/react-native/Libraries/StyleSheet/processTransform.js
+
 [include]
 
 [libs]
@@ -67,4 +74,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
 
 [version]
-^0.78.0
+^0.84.0
