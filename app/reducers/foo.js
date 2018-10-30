@@ -1,13 +1,13 @@
 // @flow
 
-import { ADD, SUB } from '../actions/actionTypes';
-// import { type FooState } from '../config/types';
+import { ADD, SUB, ADD_WITH_AMOUNT } from '../actions/actionTypes';
+import { type FooState } from '../config/types';
 
-const initialState: any = {
+const initialState: FooState = {
   count: 99,
 };
 
-export default function (state: any = initialState, action: any) {
+export default function (state: FooState = initialState, action: any) {
   switch (action.type) {
     case ADD: {
       return {
@@ -19,6 +19,12 @@ export default function (state: any = initialState, action: any) {
       return {
         ...state,
         count: state.count - 1,
+      };
+    }
+    case ADD_WITH_AMOUNT: {
+      return {
+        ...state,
+        count: state.count + action.payload,
       };
     }
     default:

@@ -13,7 +13,12 @@ const instructions = Platform.select({
   android: 'android',
 });
 
-type Props = {add: () => void, sub: () => void, count: number};
+type Props = {
+  add: () => void,
+  sub: () => void,
+  delayedChange: (number) => void,
+  count: number
+};
 
 type FooType = {| blah: boolean |};
 const mine: FooType = { blah: true };
@@ -21,7 +26,9 @@ const test = (stuff: FooType): boolean => !stuff.blah;
 
 class Home extends Component<Props> {
   render() {
-    const { add, sub, count } = this.props;
+    const {
+      add, sub, delayedChange, count,
+    } = this.props;
 
     const pic = {
       uri:
@@ -38,6 +45,7 @@ Welcome to React!
         <Text style={styles.instructions}>{instructions}</Text>
         <Button title="Add" onPress={add} />
         <Button title="Sub" onPress={sub} />
+        <Button title="Delayed +10" onPress={() => delayedChange(10)} />
         <Image source={pic} style={styles.image} />
       </View>
     );
