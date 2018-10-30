@@ -1,7 +1,9 @@
 // @flow
 
 import { ADD, ADD_WITH_AMOUNT, SUB } from './actionTypes';
-import type { Dispatch, BaseAction, ThunkAction } from '../config/types';
+import {
+  type BaseAction, type ThunkAction,
+} from '../config/types';
 
 export function add() {
   return ({
@@ -10,18 +12,24 @@ export function add() {
   });
 }
 
-export const sub = (): BaseAction => ({
-  type: SUB,
-  payload: { },
-});
+export function sub() {
+  return {
+    type: SUB,
+    payload: { },
+  };
+}
 
-export const addWithAmount = (amount: number): BaseAction => ({
-  type: ADD_WITH_AMOUNT,
-  payload: amount,
-});
+export function addWithAmount(amount: number): BaseAction {
+  return {
+    type: ADD_WITH_AMOUNT,
+    payload: amount,
+  };
+}
 
-export const delayedChange = (amount: number): ThunkAction => (dispatch: Dispatch) => {
-  setTimeout(() => {
-    dispatch(addWithAmount(amount));
-  }, 1000);
-};
+export function delayedChange(amount: number): ThunkAction {
+  return (dispatch) => {
+    setTimeout(() => {
+      dispatch(addWithAmount(amount));
+    }, 1000);
+  };
+}

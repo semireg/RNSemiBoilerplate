@@ -42,7 +42,7 @@ module.exports = {
         2,
         "comma"
       ],
-      "flowtype/require-parameter-type": 2,
+      "flowtype/require-parameter-type": 0,
       "flowtype/require-return-type": [
         0,
         "always",

@@ -1,35 +1,18 @@
 // @flow
 
-import { type Action } from 'redux';
+import { createReducer } from '../helpers/redux';
+import * as Action from '../actions/actionTypes';
+import { FooStateRecord } from '../config/types';
 
-import { ADD, SUB, ADD_WITH_AMOUNT } from '../actions/actionTypes';
-import type { FooState } from '../config/types';
+type WithAmountActionType = { payload: number };
 
-const initialState: FooState = {
-  count: 99,
+const handlers = {
+  [Action.ADD]: (state: FooStateRecord) => state.update('count', (count: number) => count + 1),
+  [Action.SUB]: (state: FooStateRecord) => state.update('count', (count: number) => count - 1),
+  [Action.ADD_WITH_AMOUNT]: (state: FooStateRecord, action: WithAmountActionType) => state.update('count', (count: number) => count + action.payload),
 };
 
-export default function (state: FooState = initialState, action: Action) {
-  switch (action.type) {
-    case ADD: {
-      return {
-        ...state,
-        count: state.count + 1,
-      };
-    }
-    case SUB: {
-      return {
-        ...state,
-        count: state.count - 1,
-      };
-    }
-    case ADD_WITH_AMOUNT: {
-      return {
-        ...state,
-        count: state.count + action.payload,
-      };
-    }
-    default:
-      return state;
-  }
-}
+const defaultState = FooStateRecord();
+const foo = createReducer(defaultState, handlers);
+
+export default foo;

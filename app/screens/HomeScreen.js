@@ -5,10 +5,10 @@ import { bindActionCreators } from 'redux';
 
 import Home from '../components/Home';
 import * as FooActions from '../actions/foo';
-import type { AppState, Dispatch } from '../config/types';
+import { AppStateRecord, type Dispatch } from '../config/types';
 
-const mapStateToProps = (state: AppState) => ({
-  count: state.foo.count,
+const mapStateToProps = (state: AppStateRecord) => ({
+  count: state.getIn(['foo', 'count']),
 });
 
 function mapDispatchToProps(dispatch: Dispatch) {
