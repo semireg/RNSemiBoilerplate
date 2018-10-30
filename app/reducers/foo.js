@@ -1,13 +1,15 @@
 // @flow
 
+import { type Action } from 'redux';
+
 import { ADD, SUB, ADD_WITH_AMOUNT } from '../actions/actionTypes';
-import { type FooState } from '../config/types';
+import type { FooState } from '../config/types';
 
 const initialState: FooState = {
   count: 99,
 };
 
-export default function (state: FooState = initialState, action: any) {
+export default function (state: FooState = initialState, action: Action) {
   switch (action.type) {
     case ADD: {
       return {

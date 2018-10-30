@@ -1,5 +1,4 @@
 // @flow
-// @format
 
 import React, { Component } from 'react';
 import {
@@ -20,10 +19,6 @@ type Props = {
   count: number
 };
 
-type FooType = {| blah: boolean |};
-const mine: FooType = { blah: true };
-const test = (stuff: FooType): boolean => !stuff.blah;
-
 class Home extends Component<Props> {
   render() {
     const {
@@ -31,17 +26,15 @@ class Home extends Component<Props> {
     } = this.props;
 
     const pic = {
-      uri:
-      'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
+      uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
     };
+
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-Welcome to React!
+          Count:
           {count}
-          {test(mine) ? ' YES' : ' no'}
         </Text>
-        <Text style={styles.instructions}>Yep 1</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <Button title="Add" onPress={add} />
         <Button title="Sub" onPress={sub} />
