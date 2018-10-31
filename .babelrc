@@ -5,13 +5,6 @@
     },
     "development": {
       "plugins": [
-        [
-          "flow-runtime",
-          {
-            "assert": true,
-            "annotate": true
-          }
-        ]
       ]
     }
   }
