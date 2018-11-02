@@ -5,6 +5,14 @@
     },
     "development": {
       "plugins": [
+        ["@babel/plugin-proposal-decorators", { "legacy": true }],
+        // [
+        //   "flow-runtime",
+        //   {
+        //     "assert": true,
+        //     "annotate": true
+        //   }
+        // ]
       ]
     }
   }
