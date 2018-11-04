@@ -11,7 +11,7 @@ type Props = NavigationScreenProps & {
   itemId: number
 };
 
-class Home extends Component<Props> {
+class Details extends Component<Props> {
   static navigationOptions: NavigationScreenConfig = ({ navigation, navigationOptions }) => ({
     title: navigation.getParam('otherParam', 'A Nested Details Screen'),
     /* These values are used instead of the shared configuration! */
@@ -67,7 +67,7 @@ class Home extends Component<Props> {
   }
 }
 
-export default Home;
+export default Details;
 
 const styles = StyleSheet.create({
   container: { flex: 1, alignItems: 'center', justifyContent: 'center' },

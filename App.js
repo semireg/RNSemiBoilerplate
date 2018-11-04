@@ -19,9 +19,6 @@ const MainStack = createStackNavigator(
     },
   },
   {
-    /* Same configuration as before */
-  },
-  {
     initialRouteName: 'Home',
     /* The header config from HomeScreen is now here */
     navigationOptions: {
