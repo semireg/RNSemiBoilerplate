@@ -7,25 +7,50 @@ import { createStackNavigator } from 'react-navigation';
 import store from './app/config/store';
 import HomeScreen from './app/screens/HomeScreen';
 import DetailsScreen from './app/screens/DetailsScreen';
+import ModalScreen from './app/screens/ModalScreen';
 
-const RootStack = createStackNavigator({
-  Home: HomeScreen,
-  Details: DetailsScreen,
-},
-{
-  initialRouteName: 'Home',
-  /* The header config from HomeScreen is now here */
-  navigationOptions: {
-    headerStyle: {
-      backgroundColor: '#f4511e',
+const MainStack = createStackNavigator(
+  {
+    Home: {
+      screen: HomeScreen,
     },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      fontWeight: 'bold',
+    Details: {
+      screen: DetailsScreen,
     },
-    dispatch: store.dispatch,
   },
-});
+  {
+    /* Same configuration as before */
+  },
+  {
+    initialRouteName: 'Home',
+    /* The header config from HomeScreen is now here */
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: '#f4511e',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+      dispatch: store.dispatch,
+    },
+  },
+);
+
+const RootStack = createStackNavigator(
+  {
+    Main: {
+      screen: MainStack,
+    },
+    MyModal: {
+      screen: ModalScreen,
+    },
+  },
+  {
+    mode: 'modal',
+    headerMode: 'none',
+  },
+);
 
 type Props = {};
 export default class App extends Component<Props> {

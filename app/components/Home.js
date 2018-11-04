@@ -24,7 +24,7 @@ type Props = NavigationScreenProps & {
 
 class Home extends Component<Props> {
   static navigationOptions: NavigationScreenConfig = ({
-    add, sub,
+    navigation, add, sub,
   }) => {
     const onAdd = () => {
       if (add) {
@@ -44,6 +44,11 @@ class Home extends Component<Props> {
         <HeaderButtons>
           <Item title="Add" onPress={onAdd} />
           <Item title="Sub" onPress={onSub} />
+        </HeaderButtons>
+      ),
+      headerLeft: (
+        <HeaderButtons>
+          <Item title="Modal" onPress={() => navigation.navigate('MyModal')} />
         </HeaderButtons>
       ),
     };
