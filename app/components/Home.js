@@ -5,7 +5,7 @@ import {
   Platform, StyleSheet, Text, View, Image, Button,
 } from 'react-native';
 import { NavigationScreenProps, NavigationScreenConfig } from 'react-navigation';
-import HeaderButtons, { HeaderButton, Item } from 'react-navigation-header-buttons';
+import HeaderButtons, { Item } from 'react-navigation-header-buttons';
 
 import { colors } from '../config/styles';
 import Logo from './Logo';
@@ -111,5 +111,4 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   image: { width: 193, height: 110 },
-  row: { flexDirection: 'row' },
 });
