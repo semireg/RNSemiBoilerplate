@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { createStackNavigator } from 'react-navigation';
+// import { createSwitchNavigator, withFadeTransition } from 'react-navigation-switch-transitioner';
 
 import store from './app/config/store';
 import HomeScreen from './app/screens/HomeScreen';
@@ -46,6 +47,7 @@ const RootStack = createStackNavigator(
   {
     mode: 'modal',
     headerMode: 'none',
+    initialRouteName: 'Main',
   },
 );
 

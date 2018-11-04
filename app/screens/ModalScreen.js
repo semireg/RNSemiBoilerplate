@@ -14,7 +14,7 @@ class ModalScreen extends Component<Props> {
 
     const dismiss = () => {
       console.log(`navigation: ${navigation}`);
-      navigation.goBack();
+      navigation.navigate('Main');
     };
     return (
       <View style={styles.container}>
