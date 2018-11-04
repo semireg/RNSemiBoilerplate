@@ -25,6 +25,7 @@
 .*/node_modules/react-native/Libraries/Components/View/ViewPropTypes.js
 .*/node_modules/react-native/Libraries/Components/SafeAreaView/SafeAreaView.ios.js
 .*/node_modules/react-native/Libraries/StyleSheet/processTransform.js
+.*/node_modules/react-navigation-header-buttons/.*
 
 [include]
 
